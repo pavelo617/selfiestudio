@@ -1,0 +1,339 @@
+{% load cms_tags menu_tags sekizai_tags %}
+<!doctype html>
+<html>
+    <head>
+        <link href="{{ STATIC_URL }}css/main.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <title>Selfie Studio</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="shortcut icon" href="{{ STATIC_URL }}images/favicon.ico" type="image/x-icon">
+        {% render_block "css" %}
+    </head>
+    <body>
+        {% cms_toolbar %}
+        {% render_block "js" %}
+        <div id="pop">
+                <div class="row">
+                    <div class="col s12 m6">
+                        <div id="pop2" class=" white card">
+                            <div class="card-content b-text">
+                                <center>
+                                    <p>
+                                        <span class="card-title">SELFIE STUDIO</span>
+                                    </p>
+                                </center>
+                                </br>
+                                </br>
+                                <div style=" margin bottom: 100px;float: right">
+                                    <ul style="fdisplay: inline-block;">
+                                        <li style="display: inline-block;">
+                                            <img src="{{ STATIC_URL }}images/icons8-рупор-64.png">
+                                        </li>
+                                        <li style="display: inline-block; ">
+                                            <h5 style="position: relative; bottom:45px; transform: rotate(-25deg)">Ищем </br> модель<h5>
+                                        </li>
+                                </div>
+                                    <p>
+                                        Наша компания уже больше 8 лет на рынке вебкам бизнеса, где каждый может реализовать свои мечты. Мы создаём базовую площадку для тех, кто желает двигаться вперёд. От вас не требуется вложений, специального образования, да и вообще, кроме вашего обаяния и умения общаться ничего не нужно! Вам необходимо просто заполнить анкету, дождавшись звонка, сможете пройти обучение и выйти в онлайн! </br>
+                                        <h5>Главное условие – вы уже достигли совершеннолетия, а так же готовы подтвердить личность и возраст.</h5>
+                                    </p>
+                            </div>
+                            <div style="border-radius: 30px;" class="card-action">
+                                <a href="#footer">
+                                    <button id="btn_anketa" class=" black btn waves-effect waves-light" type="submit" name="action">Перейти к заполнению анкеты
+                                        <i class="material-icons right">send</i>
+                                    </button>
+                                </a>
+                                <a >
+                                    <button id="btn_info" class="black btn waves-effect waves-light" type="submit" name="action">Продолжить ознакомление
+                                        <i class="material-icons right">send</i>
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div id="pageloader" class='loader-item peeek-loading'>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <nav class="z-depth-3 #6a1b9a purple darken-3" style=" position: fixed; display: none" id="load">
+            <div class=" nav-wrapper">
+                <a href="/ru/" class="brand-logo">
+                    <img width="100" src="{{ STATIC_URL }}images/logo.png">
+                </a>
+                <a style="" href="#" data-target="slide-out" class="sidenav-trigger"><i class="#000000 black-text material-icons">menu</i></a>
+                <center>
+                    <ul id="nav-mobile" class="black-text right hide-on-med-and-down">
+                        <li>
+                            <div class="col hide-on-small-only m3 l2">
+                                        {% placeholder "navigacia" %}
+                            </div>
+                        </li>
+                        <li>
+                            {% show_menu 0 100 100 100 %}
+                        <li>
+                    </ul>
+                </center>
+            </div>
+        </nav>
+    <center>
+        <header style="padding-top: 63px; padding-bottom:15px;">
+            <div class="z-depth-5" id="studio_header">
+                <div id="studio_header_shadowbox">
+                    <div class="white-text" id="studio_header_text">
+                        <div id="header_text1" >
+                            <p id="text1">
+                                Интересная высокооплачиваемая работа для девушек
+                            </p>
+                        </div>
+                        <div id="header_text2" >
+                            <ul>
+                                <li>
+                                    <p id="text2">
+                                        Вебкам студия
+                                    </p>
+                                </li>
+                                <li>
+                                    <p id="text3">
+                                        Selfie Studo
+                                    </p>
+                                </li>
+                            <ul>
+                        </div>
+                        <div id="header_text3" >
+                            <p id="text4">
+                                Омск
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </center>
+        <div  class="container">
+            {% block content %}       
+            {% endblock content %}
+        </div>
+        <ul id="slide-out" class="#4db6ac white sidenav">
+            <a  style="margin-left: 255px" id="closeicon" href="#" class="sidenav-close" ><i class="black-text material-icons">close</i></a>
+            <li>
+                <div id="load2" style="padding: 0;" class="user-view">
+                    <h5>Панель навигации:</h5>
+                    <ul style="display: inline"; class=" section table-of-contents">
+                        {% placeholder "navigacia" %}
+                    </ul>
+                    {% show_menu 0 100 100 100 %}
+                </div>
+            </li>
+            <li style="position: absolute; bottom: 80px;">
+                <div   class="black-text">
+                    <h5 class="black-text">Контактная информация:</h5>
+                    <ul>
+                        <li>Телефон: <a class="black-text text-lighten-3" href="tel:+79230363306">+7-923-036-33-06</a></li>
+                        <li>Социальная жизнь:</li>
+                        <li >
+                            <a style="display: inline; padding: 0px; margin: 0 20px 0 20px; " href="https://vk.com/id601440197"> <img width="48" src="{{ STATIC_URL }}images/icons8-вконтакте-68.png" > </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <footer id="footer" style="display: none; border-top: 1px solid #000;" class=" z-depth-5 white page-footer">
+          <div class="container">
+            <div class="row">
+            <center>
+                    <p ><h5 class="black-text" >КОНТАКТЫ КОМПАНИИ Selfie Studio</h5></br>
+                    <h5 class="black-text">Вы всегда можете позвонить нам, написать или связаться любым удобным для вас способом. Следите за нашей деятельностью в социальных сетях. Вы узнаете много полезной информации из первых уст!</h5></p>
+            </center>
+              <div class="col l6 s12">
+                <div class="black-text row">
+                    <form name="contact_form" id="ajax_form" method="post" class="col s12">
+                        {% csrf_token %}
+                        <h4> Оставьте ваши данные чтобы мы могли с вами связаться </h4>
+                        </br>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input name="name" id="icon_prefix" type="text" class="validate black-text">
+                                <label class="black-text" for="icon_prefix">Ваше имя</label>
+                            </div>
+                        </div>
+                        <div class="row"> 
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">phone</i>
+                                <input name="phone" id="icon_telephone" type="tel" class="validate black-text">
+                                <label class="black-text" for="icon_telephone">Номер телефона</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">email</i>
+                                <input name="email" id="email" type="email" class="validate black-text">
+                                <label class="black-text" for="email">Email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">mode_edit</i>
+                                <textarea name="text" id="textarea1" class="materialize-textarea black-text"></textarea>
+                                <label class="black-text" for="textarea1">Ваше сообщение</label>
+                            </div>
+                        </div>
+                        <a 
+                        onclick="M.toast({html: 'Спасибо за анкету с вами обязательно свяжуться!', 
+                        completeCallback: function(){location.reload()}})" 
+                        class="#000000 black waves-effect waves-light btn pulse"><i class="material-icons right">cloud</i><input id="btn" class="white-text" type="submit" value="Отправить анкету"></a>
+                    </form>
+                </div>
+              </div>
+              <div id="info" class="black-text col l4 offset-l2 s12">
+                    <h4 class="black-text">Контактная информация:</h4>
+                    <ul>
+                        </br>
+                        </br>
+                        </br>
+                        <li> <h5 >Телефон: <a class="black-text text-lighten-3"  href="tel:+79230363306">+7-923-036-33-06</a></h5></li>
+                        </br>
+                        </br>
+                        <li><h5>Социальная жизнь:</h5></li>
+                        </br>
+                        <li>
+                            <ul style="display: inline" >
+                                <li style="display: inline"><a style="margin: 0 30px 0 0;" href="https://vk.com/id601440197"> <img src="{{ STATIC_URL }}images/icons8-вконтакте-80.png" > </a></li>
+                            </ul>
+                        </li>
+                    </ul>
+              </div>
+            </div>
+          </div>
+          <div class="#6a1b9a purple darken-3 footer-copyright">
+            <div class="white-text container">
+            © 2020 Selfie Studio
+            </div>
+          </div>
+        </footer>
+        <div id="demo" >
+            <a  >
+                <div id="demo2" >
+                </div>
+            </a>
+        </div>
+        <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+        <script src="{{ STATIC_URL }}js/jquery.min.js"></script>
+        <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="{{ STATIC_URL }}js/jquery.jrumble.1.3.min.js"></script>
+        <script>
+        $(document).ready(function(){
+            $("#load").on("click","a", function (event) {
+                event.preventDefault();
+                var id  = $(this).attr('href'),
+                    top = $(id).offset().top;
+                $('body,html').animate({scrollTop: top-120}, 1500);
+            });
+        });
+        $(document).ready(function(){
+            $("#load2").on("click","a", function (event) {
+                event.preventDefault();
+                var id  = $(this).attr('href'),
+                    top = $(id).offset().top;
+                $('body,html').animate({scrollTop: top-120}, 1500);
+            });
+        });
+        $(function(){
+            $('#btn_anketa').click(function(){
+                $('#pop').fadeOut();
+            })
+        });
+        $(function(){
+            $('#btn_info').click(function(){
+                $('#pop').fadeOut();
+            })
+        });
+        $(document).mouseup(function (e) {
+            var popup = $('#pop2');
+            if (e.target!=popup[0]&&popup.has(e.target).length === 0){
+                $('#pop').fadeOut();
+            }
+        });
+        $(function(){
+            $('#demo2').click(function(){
+                $('#demo').fadeOut();
+                $('#demo2').trigger('stopRumble');
+                $('#pop').fadeIn();
+            });
+        });
+        $(function(){
+
+            setTimeout(function(){
+                $("#demo").delay(700).fadeIn();
+                }, 5000);
+
+        	$('#demo2').jrumble({
+                x: 0,
+                y: 0,
+                rotation: 15
+            });
+
+            setInterval(function(){
+                $('#demo2').trigger('startRumble');
+                
+                setTimeout(function(){
+                    $('#demo2').trigger('stopRumble')
+                    }, 1000);
+            }, 2000);
+
+        });
+
+            $(function() {
+                "use strict";
+                $("body").imagesLoaded(function(){
+                    $(".loader-item").delay(700).fadeOut();
+                    $("#pageloader").delay(800).fadeOut("slow");
+                });
+            });
+            $(function() {
+                "use strict";		
+                $("body").imagesLoaded(function(){
+                    $("#load").delay(700).fadeIn();
+                });
+            });
+            $(function() {
+                "use strict";		
+                $("body").imagesLoaded(function(){
+                    $("#footer").delay(700).fadeIn();
+                });
+            });
+            document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+            });
+            $(document).ready(function(){
+                $('.sidenav').sidenav();
+            });
+            $(document).ready(function() {
+                $("#ajax_form").submit(function() {
+                    $.ajax({
+                        type: 'POST',
+                        url: '/anketa/',
+                        data: $(this).serialize()
+                    })
+                            return false;
+                    });
+                });
+        </script>
+    </body>
+</html>
